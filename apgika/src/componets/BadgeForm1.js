@@ -1,5 +1,5 @@
 import React from 'react';
-class BadgeForm extends React.Component{
+class BadgeForm1 extends React.Component{
     //state = {};
     
    // handleChange = e => {
@@ -26,7 +26,8 @@ class BadgeForm extends React.Component{
     render(){
         return(
            <div> 
-            <center><h2>Registrate</h2></center>
+            <center><h2>Iniciar Sesión </h2>
+            <h6>Ingresa alguno de los campos y tu contraseña</h6></center>
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label>Nombre </label>
@@ -52,18 +53,18 @@ class BadgeForm extends React.Component{
                 </div>
 
                 <div className="form-group">
-                    <label>Nueva Contraseña</label>
+                    <label>Ingresa tu Contraseña</label>
                     <input onChange={this.props.onChange} className="form-control" type="password" name=""/>
 
                 </div>
                 
-                <center> <button  onClick={this.handleClick} className="btn btn-primary">Registrarme</button></center>
+                <center> <button  onClick={this.handleClick} className="btn btn-primary">iniciar Sesión</button></center>
                
             </form>
-            <center> <a className="registrarse" href="">Ya tienes cuenta</a> </center>
+            <center> <a className="registrarse" href="">No tienes cuenta, registrate</a> </center>
         </div>
         );
     }
 }
 
-export default BadgeForm;
+export default BadgeForm1;

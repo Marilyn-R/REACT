@@ -1,9 +1,9 @@
 import React from 'react';
 import '../componets/styles/Badge.css';
-import BadgeForm from '../componets/BadgeForm';
+import BadgeForm1 from '../componets/BadgeForm1';
 import Navbar from '../componets/Navbar';
 import Badge from '../componets/Badge';
-class Badgenew extends React.Component{
+class Badgenew1 extends React.Component{
     state={form: {
         firstName:'',
         lastName:'',
@@ -27,8 +27,6 @@ class Badgenew extends React.Component{
             <div>
                 <Navbar/>
                 <div className="BadgeNew__hero">
-               
-               
                     <img className="img-fluid" src="" alt=""/>    
 
                 
@@ -45,7 +43,7 @@ class Badgenew extends React.Component{
 
 
                     <div className="col-6">
-                        <BadgeForm onChange={this.handleChange}
+                        <BadgeForm1 onChange={this.handleChange}
                         formValues={this.state.form } />
                     </div>
                     </div>
@@ -56,4 +54,4 @@ class Badgenew extends React.Component{
         );
     }
 }
-export default Badgenew;
+export default Badgenew1;

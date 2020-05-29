@@ -1,7 +1,7 @@
 .Navbar {
     width: 100%;
     padding: 0.5rem 0;
-    background-color: #7f4c9a;
+    background-color: #b97cda;
   }
   
   .Footer {
@@ -10,7 +10,7 @@
   }
   
   .Navbar__brand {
-    color: #ffffff;
+    color: #34063f;
   
     display: flex;
     align-items: center;
