@@ -50,7 +50,7 @@ const element = React.createElement(
 
  //const container = document.getElementById('app');
  const container= document.getElementById('app');
- ReactDOM.render(<Badges
+ ReactDOM.render(<Badgenew
  /*  firstName="LILI" 
   jobtittle="arq"
   twitter="maril" */
