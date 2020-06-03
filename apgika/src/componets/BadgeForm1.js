@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from 'react-router-dom';
 class BadgeForm1 extends React.Component{
     //state = {};
     
@@ -61,7 +62,8 @@ class BadgeForm1 extends React.Component{
                 <center> <button  onClick={this.handleClick} className="btn btn-primary">iniciar Sesión</button></center>
                
             </form>
-            <center> <a className="registrarse" href="">No tienes cuenta, registrate</a> </center>
+            <center> <Link to= "/badges/new "className="registrarse" >No tienes cuenta, registrate</Link> </center>
+           
         </div>
         );
     }

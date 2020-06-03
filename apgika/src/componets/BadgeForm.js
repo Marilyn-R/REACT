@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from 'react-router-dom';
 class BadgeForm extends React.Component{
     //state = {};
     
@@ -17,17 +18,17 @@ class BadgeForm extends React.Component{
         console.log("Button was clicked");
     };
 
-    handleSubmit = e => {
+   /*  handleSubmit = e => {
         e.preventDefault();
         console.log("Form submit");
         console.log(this.state);
-    };
+    }; */
 
     render(){
         return(
            <div> 
             <center><h2>Registrate</h2></center>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.props.OnSubmit}>
                 <div className="form-group">
                     <label>Nombre </label>
                     <input onChange={this.props.onChange} className="form-control" type="text" name="firstName" value={this.props.formValues.firstName}/>
@@ -57,10 +58,14 @@ class BadgeForm extends React.Component{
 
                 </div>
                 
-                <center> <button  onClick={this.handleClick} className="btn btn-primary">Registrarme</button></center>
-               
+                <center> <button  onClick={this.handleClick} className="btn btn-primary">Registrarme</button>
+                {this.props.error && (
+                <p className="text-danger"> 
+                {this.props.error.message}</p>)}</center>
             </form>
-            <center> <a className="registrarse" href="">Ya tienes cuenta</a> </center>
+            <center> <Link to= "/badges/new "className="registrarse" >Ya tienes cuenta</Link>
+            
+             </center>
         </div>
         );
     }

@@ -6,11 +6,11 @@
  */
  import React from 'react';
  import ReactDOM from 'react-dom';
-import Badgenew from './pages/Badgenew';
-import Badgenew1 from './pages/Badgenew1';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import './global.css';
-import Badges from './pages/Badges';
+
+import App from './componets/App';
 //const jsx =<h1>HEllo</h1>;
 
 
@@ -50,7 +50,7 @@ const element = React.createElement(
 
  //const container = document.getElementById('app');
  const container= document.getElementById('app');
- ReactDOM.render(<Badgenew
+ ReactDOM.render(<App
  /*  firstName="LILI" 
   jobtittle="arq"
   twitter="maril" */
