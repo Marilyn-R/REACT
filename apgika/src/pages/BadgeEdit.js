@@ -3,9 +3,9 @@ import '../componets/styles/Badge.css';
 import BadgeForm from '../componets/BadgeForm';
 import PageLoading from '../componets/PageLoading'; 
 import Badge from '../componets/Badge';
-class Badgenew extends React.Component{
+class BadgeEdit extends React.Component{
     state={
-        loading: false,
+        loading: true,
         error:null,
         form: {
         firstName:'',
@@ -15,6 +15,20 @@ class Badgenew extends React.Component{
         jobtittle:'',
     }};
 
+    componentDidMount(){
+        this.fetchData()
+    }
+    fetchData = async e => {
+        this.setState({loading:true, error: null })
+        try{
+            /* const data= await api.badges.update(this.props.match.params.badgeId, this.state.form) */
+        
+            /* this.setState({loading:false, form: data}); */
+        } catch (error){
+        this.setState({loading:false, error: error })
+    }
+};
+    
     handleChange = e => {
        // const nextForm = this.state.form
         //nextForm[e.target.name] = e.target.value
@@ -31,7 +45,7 @@ class Badgenew extends React.Component{
         e.preventDefault();
         this.setState({loading: true, error: null });
             try{
-               /*  await api.Badges.create(this.state.form); */
+               /*  await api.badges.update(this.props.match.params.badgeId, this.state.form); */
                 this.setState({loading: false});
 
                 this.props.history.push('./badges');
@@ -58,6 +72,7 @@ class Badgenew extends React.Component{
                 <div className="container">
                     <div className="row">
                     <div className="col-6">
+                    <h2>Registrate</h2>
                     <Badge 
                         firstName={this.state.form.firstName || 'Tu nombre'}
                         lastName= {this.state.form.lastName || 'Tu apellido '} 
@@ -69,7 +84,7 @@ class Badgenew extends React.Component{
                     </div>
 
 
-                    <div className="col-">
+                    <div className="col-6">
                         <BadgeForm 
                         onChange={this.handleChange}
                         onSubmit= {this.handleSubmit}
@@ -84,4 +99,4 @@ class Badgenew extends React.Component{
         );
     }
 }
-export default Badgenew;
+export default BadgeEdit;

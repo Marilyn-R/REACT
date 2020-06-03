@@ -6,6 +6,7 @@ import BadgesList from '../componets/BadgesList';
 import {Link } from 'react-router-dom';
 import PageLoading from '../componets/PageLoading';
 import PageError from '../componets/PageError';
+import MiniLoader from '../componets/MiniLoader';
 class Badges extends React.Component{
   
            state={
@@ -17,9 +18,12 @@ class Badges extends React.Component{
         };
     componentDidMount(){
         this.fetchData();
+        this.intervalId = setInterval (this.fetchData, 5000);
     }
-  
-    fetchData= () => {
+  componentWillMount(){
+      clearInterval(this.intervalId);
+  }
+    fetchData= async () => {
         this.setState({loading: true, error: null });
     
     try {
@@ -31,7 +35,7 @@ class Badges extends React.Component{
 };
     render(){
 
-        if (this.state.loading === true){
+        if (this.state.loading === true && !this.state.error){
             return <PageLoading />;
         }
         
@@ -56,12 +60,9 @@ class Badges extends React.Component{
                         <div className="Badges__buttons ">
                         <center> <Link to= "/badges/new "className="btn btn-primary" >New Badge</Link> </center>
                           
-                        </div>
-                        <div className="BadgesList">
-                            <div className="Badges__container">
-                                <BadgesList badges={this.state.data} />
-                               
-                            </div>
+                        <BadgesList badges={this.state.data} />
+                        {this.state.loading && <MiniLoader/> }
+
                         </div>
 
                     </div>

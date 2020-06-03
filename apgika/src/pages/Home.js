@@ -1,0 +1,40 @@
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+import './styles/Home.css';
+import platziconfLogoImage from '../images/logo1.svg';
+import astronautsImage from '../images/stars.svg';
+
+export default class Home extends Component {
+  render() {
+    return (
+      <div className="Home">
+        <div className="container">
+          <div className="row">
+            <div className="Home__col "><h1>Sigue Creando Con</h1>
+              <img
+                src={platziconfLogoImage}
+                alt="Platzi Conf Logo"
+                className="img-fluid mb-2"
+                
+              />
+
+             
+             <center> <Link className="btn btn-primary" to="/badges">
+                Comienza ya
+              </Link></center>
+            </div>
+
+            <div className="Home__col d-none d-md-block col-md-8">
+              <img
+                src={astronautsImage}
+                alt="Astronauts"
+                className="img-fluid p-4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
