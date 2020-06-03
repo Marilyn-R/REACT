@@ -58,7 +58,7 @@ class Badges extends React.Component{
                 </div>
                     <div className="Badges__container ">
                         <div className="Badges__buttons ">
-                        <center> <Link to= "/badges/new "className="btn btn-primary" >New Badge</Link> </center>
+                        <center> <Link to= "/badges/new "className="btn btn-primary" > Not Found</Link> </center>
                           
                         <BadgesList badges={this.state.data} />
                         {this.state.loading && <MiniLoader/> }

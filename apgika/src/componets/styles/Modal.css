@@ -1,0 +1,18 @@
+.Modal__container{
+    position: relative;
+    top: 10rem;
+    background-color: aliceblue;
+    padding: 1rem;
+    width: 400px;
+
+
+}
+.Modal__close-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    background-color: aliceblue;
+    padding: 0.5rem 1rem;
+    
+}
